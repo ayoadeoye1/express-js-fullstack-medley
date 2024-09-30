@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate's Data</title>
+</head>
+<body>
+    <h1>Candidate's Informations</h1>
+    <div>
+        <a href="/add">Add Yours</a>
+    </div>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Names</th>
+                <th>Contact</th>
+                <th>Image</th>
+                <th>DOB</th>
+                <th>Address</th>
+                <th>Favourite_Quote</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((ele) => { %>
+                <tr>
+                    <td><%= ele.Id %></td>
+                    <td><%= ele.Names %></td>
+                    <td><%= ele.Contact %></td>
+                    <td><%= ele.Image %></td>
+                    <td><%= ele.DOB %></td>
+                    <td><%= ele.Address %></td>
+                    <td><%= ele.Favourite_Quote %></td>
+                    <td><a href="/edit/<%= ele.Id %>">Edit</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
