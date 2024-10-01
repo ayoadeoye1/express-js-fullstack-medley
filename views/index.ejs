@@ -4,38 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate's Data</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF; /* White background */
+            color: #3E2723; /* Dark brown text */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3E2723;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3E2723;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #E0E0E0;
+            border-radius: 12px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px #FFFFFF;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px #FFFFFF;
+        }
+
+        /* Table container */
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #F5F5F5; /* Light background for table */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px #FFFFFF;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            color: #3E2723; /* Dark text */
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        th {
+            background-color: #D7CCC8; /* Slightly darker background for header */
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #F5F5F5;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px #FFFFFF;
+        }
+
+        td a {
+            color: #6D4C41;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            text-decoration: none;
+            color: #A1887F;
+        }
+
+        /* Neumorphism Button Style */
+        /* .button {
+            background-color: #E0E0E0;
+            border-radius: 12px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            text-align: right;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px #FFFFFF;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .button:hover {
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px #FFFFFF;
+        } */
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            td {
+                padding: 10px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table, th, td {
+                font-size: 12px;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+
+            a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Candidate's Informations</h1>
     <div>
-        <a href="/add">Add Yours</a>
-    </div>
-    <table border="2">
-        <thead>
-            <tr>
-                <th>S/N</th>
-                <th>Names</th>
-                <th>Contact</th>
-                <th>Image</th>
-                <th>DOB</th>
-                <th>Address</th>
-                <th>Favourite_Quote</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% data.forEach((ele) => { %>
+        <h1>Candidate's Information</h1>
+        <div style="text-align: right; margin: 15px;" class="button">
+            <a href="/add">Add Yours</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Names</th>
+                    <th>Contact</th>
+                    <th>Image</th>
+                    <th>DOB</th>
+                    <th>Address</th>
+                    <th>Favourite Quote</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((ele) => { %>
                 <tr>
                     <td><%= ele.Id %></td>
                     <td><%= ele.Names %></td>
                     <td><%= ele.Contact %></td>
-                    <td><img src="/files/<%= ele.Image %>" /></td>
+                    <td><img src="/files/<%= ele.Image %>" alt="Candidate Image"/></td>
                     <td><%= ele.DOB %></td>
                     <td><%= ele.Address %></td>
                     <td><%= ele.Favourite_Quote %></td>
                     <td><a href="/edit/<%= ele.Id %>">Edit</a></td>
                 </tr>
-            <% }) %>
-        </tbody>
-    </table>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
