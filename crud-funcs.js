@@ -15,3 +15,20 @@ exports.readCsv = async () => {
         .on("error", (error) => reject(`Error Occured: ${error}`))
     })
 }
+
+exports.writeCsv = async (data) => {
+    const writeData = writer.createObjectCsvWriter({
+        path: dataPath,
+        header: [
+            { id: 'Id', title: 'Id' },
+            { id: 'Names', title: 'Names' },
+            { id: 'Contact', title: 'Contact' },
+            { id: 'Image', title: 'Image' },
+            { id: 'DOB', title: 'DOB' },
+            { id: 'Address', title: 'Address' },
+            { id: 'Favourite_Quote', title: 'Favourite_Quote' }
+        ]
+    });
+    
+    return writeData.writeRecords(data)
+}

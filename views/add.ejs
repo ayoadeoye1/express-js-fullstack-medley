@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User Details</title>
+</head>
+<body>
+    <h1>Add Your Details</h1>
+    <form action="/add" method="POST">
+        <label>Names</label><br />
+        <input type="text" name="Names" placeholder="John Doe Smith" required/><br />
+        <label>Contact</label><br />
+        <input type="text" name="Contact" placeholder="+1(234)55987" required/><br />
+        <label>Image</label><br />
+        <input type="" name="Image" placeholder="John Doe Smith" required/><br />
+        <label>DOB</label><br />
+        <input type="date" name="DOB" placeholder="11/11/2013" required/><br />
+        <label>Address</label><br />
+        <input type="text" name="Address" placeholder="17 Mongo Park" required/><br />
+        <label>Favourite_Quote</label><br />
+        <input type="text" name="Favourite_Quote" placeholder="Don't Give Up" required/><br />
+        <button type="submit">Add</button>
+    </form>
+    <div>
+        <a href="/">Back To List</a>
+    </div>
+</body>
+</html>
