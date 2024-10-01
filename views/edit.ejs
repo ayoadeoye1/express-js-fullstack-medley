@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Details</title>
+</head>
+<body>
+    <h1>Edit Your Details</h1>
+    <form action="/edit/<%= entry.Id %>" method="POST" enctype="multipart/form-data">
+        <label>Names</label><br />
+        <input type="text" name="Names" value=<%= entry.Names %> required/><br />
+        <label>Contact</label><br />
+        <input type="text" name="Contact" value=<%= entry.Contact %> required/><br />
+        <label>Image</label><br />
+        <input type="file" name="Image" value="/files/<%= entry.Image %>" /><br />
+        <label>DOB</label><br />
+        <input type="date" name="DOB" value=<%= entry.DOB %> required/><br />
+        <label>Address</label><br />
+        <input type="text" name="Address" value=<%= entry.Address %> required/><br />
+        <label>Favourite_Quote</label><br />
+        <input type="text" name="Favourite_Quote" value=<%= entry.Favourite_Quote %> required/><br />
+        <button type="submit">Edit</button>
+    </form>
+    <div>
+        <a href="/">Back To List</a>
+    </div>
+</body>
+</html>

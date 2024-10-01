@@ -7,13 +7,13 @@
 </head>
 <body>
     <h1>Add Your Details</h1>
-    <form action="/add" method="POST">
+    <form action="/add" method="POST" enctype="multipart/form-data">
         <label>Names</label><br />
         <input type="text" name="Names" placeholder="John Doe Smith" required/><br />
         <label>Contact</label><br />
         <input type="text" name="Contact" placeholder="+1(234)55987" required/><br />
         <label>Image</label><br />
-        <input type="" name="Image" placeholder="John Doe Smith" required/><br />
+        <input type="file" name="Image" /><br />
         <label>DOB</label><br />
         <input type="date" name="DOB" placeholder="11/11/2013" required/><br />
         <label>Address</label><br />

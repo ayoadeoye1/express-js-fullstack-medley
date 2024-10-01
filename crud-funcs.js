@@ -32,3 +32,20 @@ exports.writeCsv = async (data) => {
     
     return writeData.writeRecords(data)
 }
+
+exports.uploadFile = async (req) => {
+    const fileUpload = req.files["Image"]
+    
+    const fileName = Date.now() + fileUpload.name
+    const filePath = path.join(__dirname, "public", fileName)
+
+    fileUpload.mv(filePath, (err) =>{
+        if(err){ 
+            console.log(`Couldn't the upload file: ${err}`)
+        }else {
+            console.log("file uploaded successfully")
+        }
+    })
+    
+    return fileName
+}
